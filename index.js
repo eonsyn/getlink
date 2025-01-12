@@ -1,11 +1,11 @@
 const express = require("express");
 const axios = require("axios");
-const { scrapdata } = require("./scrappingLogic.js");
+// const { scrapdata } = require("./scrappingLogic.js");
 const Port = 2300;
 const app = express();
-app.get("/", (req, res) => {
-  scrapdata(res);
-});
+// app.get("/", (req, res) => {
+//   scrapdata(res);
+// });
 app.get("/home", (req, res) => {
   axios
     .get(
