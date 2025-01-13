@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC", "engines": {
-    "node": "^14"
+    "node": "22.x"
   },
   "dependencies": {
     "@sparticuz/chromium": "^131.0.1",
