@@ -84,12 +84,13 @@ app.get("/test", async (req, res) => {
   try {
     const { finalLink } = req.query;
     const data = await fetchMkvLink(finalLink);
-    res.send(data);
+    res.json({ finalLink: data }); // Corrected res.send.json to res.json
   } catch (err) {
     console.error(err);
     res.status(500).send("Error processing the request.");
   }
 });
+
 app.get("/", (req, res) => {
   res.send("server is live");
 });
