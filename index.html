@@ -1,0 +1,1442 @@
+<html>
+
+<head>
+  <style type="text/css">
+    .swal-icon--error {
+      border-color: #f27474;
+      -webkit-animation: animateErrorIcon .5s;
+      animation: animateErrorIcon .5s
+    }
+
+    .swal-icon--error__x-mark {
+      position: relative;
+      display: block;
+      -webkit-animation: animateXMark .5s;
+      animation: animateXMark .5s
+    }
+
+    .swal-icon--error__line {
+      position: absolute;
+      height: 5px;
+      width: 47px;
+      background-color: #f27474;
+      display: block;
+      top: 37px;
+      border-radius: 2px
+    }
+
+    .swal-icon--error__line--left {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      left: 17px
+    }
+
+    .swal-icon--error__line--right {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      right: 16px
+    }
+
+    @-webkit-keyframes animateErrorIcon {
+      0% {
+        -webkit-transform: rotateX(100deg);
+        transform: rotateX(100deg);
+        opacity: 0
+      }
+
+      to {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        opacity: 1
+      }
+    }
+
+    @keyframes animateErrorIcon {
+      0% {
+        -webkit-transform: rotateX(100deg);
+        transform: rotateX(100deg);
+        opacity: 0
+      }
+
+      to {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        opacity: 1
+      }
+    }
+
+    @-webkit-keyframes animateXMark {
+      0% {
+        -webkit-transform: scale(.4);
+        transform: scale(.4);
+        margin-top: 26px;
+        opacity: 0
+      }
+
+      50% {
+        -webkit-transform: scale(.4);
+        transform: scale(.4);
+        margin-top: 26px;
+        opacity: 0
+      }
+
+      80% {
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+        margin-top: -6px
+      }
+
+      to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        margin-top: 0;
+        opacity: 1
+      }
+    }
+
+    @keyframes animateXMark {
+      0% {
+        -webkit-transform: scale(.4);
+        transform: scale(.4);
+        margin-top: 26px;
+        opacity: 0
+      }
+
+      50% {
+        -webkit-transform: scale(.4);
+        transform: scale(.4);
+        margin-top: 26px;
+        opacity: 0
+      }
+
+      80% {
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+        margin-top: -6px
+      }
+
+      to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        margin-top: 0;
+        opacity: 1
+      }
+    }
+
+    .swal-icon--warning {
+      border-color: #f8bb86;
+      -webkit-animation: pulseWarning .75s infinite alternate;
+      animation: pulseWarning .75s infinite alternate
+    }
+
+    .swal-icon--warning__body {
+      width: 5px;
+      height: 47px;
+      top: 10px;
+      border-radius: 2px;
+      margin-left: -2px
+    }
+
+    .swal-icon--warning__body,
+    .swal-icon--warning__dot {
+      position: absolute;
+      left: 50%;
+      background-color: #f8bb86
+    }
+
+    .swal-icon--warning__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-left: -4px;
+      bottom: -11px
+    }
+
+    @-webkit-keyframes pulseWarning {
+      0% {
+        border-color: #f8d486
+      }
+
+      to {
+        border-color: #f8bb86
+      }
+    }
+
+    @keyframes pulseWarning {
+      0% {
+        border-color: #f8d486
+      }
+
+      to {
+        border-color: #f8bb86
+      }
+    }
+
+    .swal-icon--success {
+      border-color: #a5dc86
+    }
+
+    .swal-icon--success:after,
+    .swal-icon--success:before {
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      width: 60px;
+      height: 120px;
+      background: #fff;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg)
+    }
+
+    .swal-icon--success:before {
+      border-radius: 120px 0 0 120px;
+      top: -7px;
+      left: -33px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 60px 60px;
+      transform-origin: 60px 60px
+    }
+
+    .swal-icon--success:after {
+      border-radius: 0 120px 120px 0;
+      top: -11px;
+      left: 30px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 0 60px;
+      transform-origin: 0 60px;
+      -webkit-animation: rotatePlaceholder 4.25s ease-in;
+      animation: rotatePlaceholder 4.25s ease-in
+    }
+
+    .swal-icon--success__ring {
+      width: 80px;
+      height: 80px;
+      border: 4px solid hsla(98, 55%, 69%, .2);
+      border-radius: 50%;
+      box-sizing: content-box;
+      position: absolute;
+      left: -4px;
+      top: -4px;
+      z-index: 2
+    }
+
+    .swal-icon--success__hide-corners {
+      width: 5px;
+      height: 90px;
+      background-color: #fff;
+      padding: 1px;
+      position: absolute;
+      left: 28px;
+      top: 8px;
+      z-index: 1;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg)
+    }
+
+    .swal-icon--success__line {
+      height: 5px;
+      background-color: #a5dc86;
+      display: block;
+      border-radius: 2px;
+      position: absolute;
+      z-index: 2
+    }
+
+    .swal-icon--success__line--tip {
+      width: 25px;
+      left: 14px;
+      top: 46px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-animation: animateSuccessTip .75s;
+      animation: animateSuccessTip .75s
+    }
+
+    .swal-icon--success__line--long {
+      width: 47px;
+      right: 8px;
+      top: 38px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-animation: animateSuccessLong .75s;
+      animation: animateSuccessLong .75s
+    }
+
+    @-webkit-keyframes rotatePlaceholder {
+      0% {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg)
+      }
+
+      5% {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg)
+      }
+
+      12% {
+        -webkit-transform: rotate(-405deg);
+        transform: rotate(-405deg)
+      }
+
+      to {
+        -webkit-transform: rotate(-405deg);
+        transform: rotate(-405deg)
+      }
+    }
+
+    @keyframes rotatePlaceholder {
+      0% {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg)
+      }
+
+      5% {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg)
+      }
+
+      12% {
+        -webkit-transform: rotate(-405deg);
+        transform: rotate(-405deg)
+      }
+
+      to {
+        -webkit-transform: rotate(-405deg);
+        transform: rotate(-405deg)
+      }
+    }
+
+    @-webkit-keyframes animateSuccessTip {
+      0% {
+        width: 0;
+        left: 1px;
+        top: 19px
+      }
+
+      54% {
+        width: 0;
+        left: 1px;
+        top: 19px
+      }
+
+      70% {
+        width: 50px;
+        left: -8px;
+        top: 37px
+      }
+
+      84% {
+        width: 17px;
+        left: 21px;
+        top: 48px
+      }
+
+      to {
+        width: 25px;
+        left: 14px;
+        top: 45px
+      }
+    }
+
+    @keyframes animateSuccessTip {
+      0% {
+        width: 0;
+        left: 1px;
+        top: 19px
+      }
+
+      54% {
+        width: 0;
+        left: 1px;
+        top: 19px
+      }
+
+      70% {
+        width: 50px;
+        left: -8px;
+        top: 37px
+      }
+
+      84% {
+        width: 17px;
+        left: 21px;
+        top: 48px
+      }
+
+      to {
+        width: 25px;
+        left: 14px;
+        top: 45px
+      }
+    }
+
+    @-webkit-keyframes animateSuccessLong {
+      0% {
+        width: 0;
+        right: 46px;
+        top: 54px
+      }
+
+      65% {
+        width: 0;
+        right: 46px;
+        top: 54px
+      }
+
+      84% {
+        width: 55px;
+        right: 0;
+        top: 35px
+      }
+
+      to {
+        width: 47px;
+        right: 8px;
+        top: 38px
+      }
+    }
+
+    @keyframes animateSuccessLong {
+      0% {
+        width: 0;
+        right: 46px;
+        top: 54px
+      }
+
+      65% {
+        width: 0;
+        right: 46px;
+        top: 54px
+      }
+
+      84% {
+        width: 55px;
+        right: 0;
+        top: 35px
+      }
+
+      to {
+        width: 47px;
+        right: 8px;
+        top: 38px
+      }
+    }
+
+    .swal-icon--info {
+      border-color: #c9dae1
+    }
+
+    .swal-icon--info:before {
+      width: 5px;
+      height: 29px;
+      bottom: 17px;
+      border-radius: 2px;
+      margin-left: -2px
+    }
+
+    .swal-icon--info:after,
+    .swal-icon--info:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      background-color: #c9dae1
+    }
+
+    .swal-icon--info:after {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-left: -3px;
+      top: 19px
+    }
+
+    .swal-icon {
+      width: 80px;
+      height: 80px;
+      border-width: 4px;
+      border-style: solid;
+      border-radius: 50%;
+      padding: 0;
+      position: relative;
+      box-sizing: content-box;
+      margin: 20px auto
+    }
+
+    .swal-icon:first-child {
+      margin-top: 32px
+    }
+
+    .swal-icon--custom {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      border: none;
+      border-radius: 0
+    }
+
+    .swal-icon img {
+      max-width: 100%;
+      max-height: 100%
+    }
+
+    .swal-title {
+      color: rgba(0, 0, 0, .65);
+      font-weight: 600;
+      text-transform: none;
+      position: relative;
+      display: block;
+      padding: 13px 16px;
+      font-size: 27px;
+      line-height: normal;
+      text-align: center;
+      margin-bottom: 0
+    }
+
+    .swal-title:first-child {
+      margin-top: 26px
+    }
+
+    .swal-title:not(:first-child) {
+      padding-bottom: 0
+    }
+
+    .swal-title:not(:last-child) {
+      margin-bottom: 13px
+    }
+
+    .swal-text {
+      font-size: 16px;
+      position: relative;
+      float: none;
+      line-height: normal;
+      vertical-align: top;
+      text-align: left;
+      display: inline-block;
+      margin: 0;
+      padding: 0 10px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, .64);
+      max-width: calc(100% - 20px);
+      overflow-wrap: break-word;
+      box-sizing: border-box
+    }
+
+    .swal-text:first-child {
+      margin-top: 45px
+    }
+
+    .swal-text:last-child {
+      margin-bottom: 45px
+    }
+
+    .swal-footer {
+      text-align: right;
+      padding-top: 13px;
+      margin-top: 13px;
+      padding: 13px 16px;
+      border-radius: inherit;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0
+    }
+
+    .swal-button-container {
+      margin: 5px;
+      display: inline-block;
+      position: relative
+    }
+
+    .swal-button {
+      background-color: #7cd1f9;
+      color: #fff;
+      border: none;
+      box-shadow: none;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 24px;
+      margin: 0;
+      cursor: pointer
+    }
+
+    .swal-button:not([disabled]):hover {
+      background-color: #78cbf2
+    }
+
+    .swal-button:active {
+      background-color: #70bce0
+    }
+
+    .swal-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(43, 114, 165, .29)
+    }
+
+    .swal-button[disabled] {
+      opacity: .5;
+      cursor: default
+    }
+
+    .swal-button::-moz-focus-inner {
+      border: 0
+    }
+
+    .swal-button--cancel {
+      color: #555;
+      background-color: #efefef
+    }
+
+    .swal-button--cancel:not([disabled]):hover {
+      background-color: #e8e8e8
+    }
+
+    .swal-button--cancel:active {
+      background-color: #d7d7d7
+    }
+
+    .swal-button--cancel:focus {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(116, 136, 150, .29)
+    }
+
+    .swal-button--danger {
+      background-color: #e64942
+    }
+
+    .swal-button--danger:not([disabled]):hover {
+      background-color: #df4740
+    }
+
+    .swal-button--danger:active {
+      background-color: #cf423b
+    }
+
+    .swal-button--danger:focus {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(165, 43, 43, .29)
+    }
+
+    .swal-content {
+      padding: 0 20px;
+      margin-top: 20px;
+      font-size: medium
+    }
+
+    .swal-content:last-child {
+      margin-bottom: 20px
+    }
+
+    .swal-content__input,
+    .swal-content__textarea {
+      -webkit-appearance: none;
+      background-color: #fff;
+      border: none;
+      font-size: 14px;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      border: 1px solid rgba(0, 0, 0, .14);
+      padding: 10px 13px;
+      border-radius: 2px;
+      transition: border-color .2s
+    }
+
+    .swal-content__input:focus,
+    .swal-content__textarea:focus {
+      outline: none;
+      border-color: #6db8ff
+    }
+
+    .swal-content__textarea {
+      resize: vertical
+    }
+
+    .swal-button--loading {
+      color: transparent
+    }
+
+    .swal-button--loading~.swal-button__loader {
+      opacity: 1
+    }
+
+    .swal-button__loader {
+      position: absolute;
+      height: auto;
+      width: 43px;
+      z-index: 2;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      text-align: center;
+      pointer-events: none;
+      opacity: 0
+    }
+
+    .swal-button__loader div {
+      display: inline-block;
+      float: none;
+      vertical-align: baseline;
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: none;
+      margin: 2px;
+      opacity: .4;
+      border-radius: 7px;
+      background-color: hsla(0, 0%, 100%, .9);
+      transition: background .2s;
+      -webkit-animation: swal-loading-anim 1s infinite;
+      animation: swal-loading-anim 1s infinite
+    }
+
+    .swal-button__loader div:nth-child(3n+2) {
+      -webkit-animation-delay: .15s;
+      animation-delay: .15s
+    }
+
+    .swal-button__loader div:nth-child(3n+3) {
+      -webkit-animation-delay: .3s;
+      animation-delay: .3s
+    }
+
+    @-webkit-keyframes swal-loading-anim {
+      0% {
+        opacity: .4
+      }
+
+      20% {
+        opacity: .4
+      }
+
+      50% {
+        opacity: 1
+      }
+
+      to {
+        opacity: .4
+      }
+    }
+
+    @keyframes swal-loading-anim {
+      0% {
+        opacity: .4
+      }
+
+      20% {
+        opacity: .4
+      }
+
+      50% {
+        opacity: 1
+      }
+
+      to {
+        opacity: .4
+      }
+    }
+
+    .swal-overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, .4);
+      z-index: 10000;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .3s
+    }
+
+    .swal-overlay:before {
+      content: " ";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%
+    }
+
+    .swal-overlay--show-modal {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    .swal-overlay--show-modal .swal-modal {
+      opacity: 1;
+      pointer-events: auto;
+      box-sizing: border-box;
+      -webkit-animation: showSweetAlert .3s;
+      animation: showSweetAlert .3s;
+      will-change: transform
+    }
+
+    .swal-modal {
+      width: 478px;
+      opacity: 0;
+      pointer-events: none;
+      background-color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      position: static;
+      margin: 20px auto;
+      display: inline-block;
+      vertical-align: middle;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      z-index: 10001;
+      transition: opacity .2s, -webkit-transform .3s;
+      transition: transform .3s, opacity .2s;
+      transition: transform .3s, opacity .2s, -webkit-transform .3s
+    }
+
+    @media (max-width:500px) {
+      .swal-modal {
+        width: calc(100% - 20px)
+      }
+    }
+
+    @-webkit-keyframes showSweetAlert {
+      0% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+      }
+
+      1% {
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+      }
+
+      45% {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05)
+      }
+
+      80% {
+        -webkit-transform: scale(.95);
+        transform: scale(.95)
+      }
+
+      to {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+      }
+    }
+
+    @keyframes showSweetAlert {
+      0% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+      }
+
+      1% {
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+      }
+
+      45% {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05)
+      }
+
+      80% {
+        -webkit-transform: scale(.95);
+        transform: scale(.95)
+      }
+
+      to {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+      }
+    }
+  </style>
+  <title>Fateh.2025.HIN.DUB.480p.HDRip-DudeFilms.mkv</title>
+  <meta charset="utf-8">
+  <script async src="https://arc.io/widget.min.js#cmedRMLe"></script>
+  <meta name="referrer" content="no-referrer">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex,nofollow">
+
+  <link rel="preconnect" href="//getrunkhomuto.info">
+  <link rel="preconnect" href="//gukmodukuleqasfo.com">
+  <link rel="preconnect" href="//ghabovethec.info">
+  <link rel="preconnect" href="//getrunkhomuto.info">
+  <link rel="preconnect" href="//gukmodukuleqasfo.com">
+  <link rel="preconnect" href="//ghabovethec.info">
+  <script async src="https://greenanalytics.autos/recaptcha/v4_enc.js"></script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon="{&quot;token&quot;: &quot;8d04189ef95f4ae7a7c84b4d7e0e7f86&quot;}"></script>
+  <!-- End Cloudflare Web Analytics -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPX61DM9S8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VPX61DM9S8');
+  </script>
+
+  <style>
+    .icon {
+      width: 48px;
+      height: 48px
+    }
+
+    .card-header {
+      padding: .75rem 1.25rem;
+      margin-bottom: 0;
+      background-color: #f8f9fc;
+      border-bottom: 1px solid #e3e6f0
+    }
+
+    .bg-primary {
+      background-color: #4e73df !important
+    }
+
+    body {
+      font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+      font-weight: 14px
+    }
+
+    .font-weight-bold {
+      font-weight: 700 !important
+    }
+
+    .text-primary {
+      color: #007bff !important;
+      padding: .75rem 1.25rem;
+      background-color: #f8f9fc;
+      border-bottom: 1px solid #e3e6f0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      border: 1px solid #e3e6f0;
+      border-radius: .35rem;
+      line-break: auto;
+      word-break: break-all;
+      white-space: normal;
+      text-overflow: ellipsis;
+      overflow: hidden
+    }
+
+    .font-weight-bold {
+      font-weight: 700 !important
+    }
+
+    .m-0 {
+      margin: auto !important;
+      width: 100%
+    }
+
+    h4,
+    .h4 {
+      font-size: 1.4rem
+    }
+
+    .card-body {
+      flex: 1 1 auto;
+      padding: 1.25rem
+    }
+
+    .nav-tabs {
+      border-bottom: 1px solid #dddfeb
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none
+    }
+
+    .nav-tabs .nav-item {
+      margin-bottom: -1px
+    }
+
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-item.show .nav-link {
+      color: #6e707e;
+      background-color: #fff;
+      border-color: #007bff #dddfeb #fff;
+      font-weight: 600
+    }
+
+    .nav-tabs .nav-link {
+      border: 1px solid transparent;
+      border-top-left-radius: .35rem;
+      border-top-right-radius: .35rem
+    }
+
+    .nav-link {
+      display: block;
+      padding: .5rem 1rem
+    }
+
+    .nav-tabs .nav-link {
+      border: 1px solid transparent;
+      border-top-left-radius: .35rem;
+      border-top-right-radius: .35rem
+    }
+
+    .nav-link {
+      display: block;
+      padding: .5rem 1rem
+    }
+
+    a {
+      color: #4e73df;
+      text-decoration: none;
+      background-color: transparent
+    }
+
+    .footer {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      right: 0;
+      padding: 15px 50px 0 15px;
+      font-size: 15px;
+      color: #000;
+      background-color: #F2F2F2;
+      border-top: 0 solid #E6E6E6;
+      font-weight: 600;
+      text-align: right
+    }
+
+    .tab-content {
+      width: 90%;
+      height: auto;
+      position: initial;
+      right: 0;
+      padding: 0;
+      text-align: center
+    }
+
+    .btn {
+      color: #fff !important;
+      background-color: #007bff !important;
+      border-color: #007bff !important;
+      font-weight: 700 !important
+    }
+
+    .btn:hover {
+      color: #fff !important;
+      background-color: #0069d9 !important;
+      border-color: #0062cc !important
+    }
+
+    .btn-success:not(:disabled):not(.disabled):active:focus,
+    .btn-success:not(:disabled):not(.disabled).active:focus,
+    .show>.btn-success.dropdown-toggle:focus {
+      box-shadow: 0 0 0 .2rem rgba(38, 143, 255, 0.5)
+    }
+
+    .btn-success:focus,
+    .btn-success.focus {
+      box-shadow: 0 0 0 .2rem rgba(38, 143, 255, 0.5)
+    }
+
+    .btn-lg,
+    .btn-group-lg>.btn {
+      padding: .5rem 1rem;
+      font-size: 1.2rem;
+      border-radius: .45rem
+    }
+
+    .header {
+      width: 100%;
+      height: auto;
+      position: relative;
+      right: 0;
+      padding: 10px 50px 5px 15px;
+      font-size: 16px;
+      color: #000;
+      background-color: #F2F2F2;
+      border-top: 0 solid #E6E6E6;
+      font-weight: 600;
+      text-align: right;
+      margin-top: -25px
+    }
+
+    .alert-danger {
+      background-color: #e74c3c;
+      border-color: #e74c3c;
+      color: #fff
+    }
+
+    .alert {
+      padding: 15px;
+      margin-bottom: 21px;
+      border: 1px solid transparent;
+      border-radius: 4px
+    }
+
+    .card {
+      line-break: auto;
+      word-break: break-all;
+      white-space: normal;
+      text-overflow: ellipsis;
+      overflow: hidden
+    }
+
+    .m-5 {
+      margin: auto !important
+    }
+
+    .swal-button {
+      background-color: #007bff !important
+    }
+
+    .card-header:first-child {
+      font-weight: 600
+    }
+
+    .btn-success1 {
+      color: #fff;
+      background-color: #28a745;
+      border-color: #28a745;
+      display: inline-block;
+      text-align: center;
+      font-size: 1rem;
+      letter-spacing: .4px;
+      font-family: 'Open Sans', sans-serif !important;
+      font-weight: 600;
+      text-decoration: none !important;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      padding: .375rem .75rem;
+      line-height: 1.5;
+      border-radius: .30rem;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .btn-success1:not(:disabled):not(.disabled).active,
+    .btn-success1:not(:disabled):not(.disabled):active,
+    .show>.btn-success1.dropdown-toggle {
+      color: #fff;
+      background-color: #1e7e34;
+      border-color: #1c7430;
+    }
+
+    .btn-success1:hover {
+      color: #fff;
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
+
+    .btn-success1.focus,
+    .btn-success1:focus {
+      box-shadow: 0 0 0 0.2rem rgb(72 180 97 / 50%);
+    }
+
+    .btn-lg,
+    .btn-group-lg>.btn2 {
+      padding: .5rem .6rem !important;
+      font-family: 'Open Sans', sans-serif !important;
+      letter-spacing: .1px;
+      border-radius: 0.35rem !important;
+    }
+
+    .ads-btns {
+      position: relative;
+      overflow: hidden
+    }
+
+    .ads-btns a.btn2 {
+      min-width: 40%
+    }
+
+    .ads-btns svg {
+      fill: #fff;
+      width: 17px;
+      position: absolute;
+      right: 0;
+      top: 0
+    }
+
+    .ads-btns svg path {
+      fill: #fff;
+      stroke: #fff
+    }
+
+    .ads-btns svg:first-child path {
+      fill: #fff;
+      stroke: transparent
+    }
+
+    .ads-btns svg:first-child {
+      right: 20px
+    }
+
+    .downloads-btns-div .btn2 {
+      margin: 0 3px 12px
+    }
+
+    .btn2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      border: 2px solid #cbfc01;
+      padding: 10px 15px;
+      border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      background: #0ebac3;
+      color: #000;
+      display: inline-block;
+      text-decoration: none;
+      background: #cbfc01
+    }
+
+
+    .btn-zip {
+      border-color: #00d0ff;
+      background: #00d0ff;
+      color: #000
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P4E51ZP5QC"></script>
+  <script
+    src="//d2ovgc4ipdt6us.cloudfront.net/wUUIxV1AyLV8xbyUrVWphYXMEZ2diZEElNTd/WSIyMi5eIjR/JlAzdjsxXjkgbDJXFSE8O0s6HzBye3EkKyYMYn5kZF02PjZ/FzI+Mn8AcSQhLVpqPDI4UDQ2NytCJ3YkIww6PysrXTsxdHB3Yn5hZwNneDgyWTg+NGcCFXVjclInJXRwAT4gOS1fMnVjcl-4kdWNyAGEPZ2cDZzw4KVRyYmEvUDR1Y3JeJHVjckl+dWNyUCcgPSdGMjI6K0VyYhd0AWJ+YGwAYnVjchk8OCUvXXJiEmcDZzw4KVRyYmElVDQ7PmsUZWAnJ0MkOT4sFGUWYHQfYXVjclw4MjguVHJiF3MEMmFlehRlYCIjVzYiOGcDEWZhdh9mdiR/AA"></script>
+  <script
+    src="//d2ovgc4ipdt6us.cloudfront.net/SN2RqTnBUCwQoT0MNDnNBB1VTf0kEQho8FVFZAjsSVAgFOxQZAAsqVl0XBSAACiAZHkJbKiE8GVk9TDoKU1lfYEURCAsgFwpCDyATClVMOgBYD1ciE00FCSgWXhcaaAVWWQchCl4IBi9VBSJfYEASVlpmGUcMBSAVElcoa0IHBxo7VQVUAz4YWAoPa0IHCx-lrQgdVXBFGElZaIhlcAU98QFoFCWtCBwsZa0IHHENrQgcFGj4cUhMPLBteEE98NgFUX2BBGVVfa0IHTAEmBFoIT3wzElZaIhlcAU98QFABCSUfHkFYfgZSFhknH1lBWAhBAUpca0IHCQUsGVsBT3w2BlEPf0QPQVh+A1YCCzwZElYseEADSltoBQpV"></script>
+</head>
+
+<body>
+  <center>
+    <br>
+
+    <div class="header">
+      HubCloud | <a href="https://hubcloud.day/video/signup.php">Create An
+        Account</a> |<a href="admin">Login</a>
+    </div>
+    <br>
+    <div class="container container-fluid main">
+      <div class="card-body">
+        <h2>
+          <div class="main" id="section2">
+
+            <div class="card h6">
+
+              <div class="card-header text-white bg-primary mb-3">
+                Fateh.2025.HIN.DUB.480p.HDRip-DudeFilms.mkv </div>
+
+              <div class="card-body">
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">File
+                    Size<i id="size">423.99 MB</i></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">File
+                    Type<i>video/x-matrosk</i></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Share
+                    Date<i id="size">11-Jan-2025 11:08:49</i></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="alert alert-warning h6" role="alert">
+            <span>
+              <p>Experience the magic of Hubcloud where files effortlessly
+                find their way into your downloads!</p>
+              <b>Hubcloud Means File will get Downloaded by anyhow (: </b>
+            </span>
+
+          </div>
+
+          <center>
+            <!--<a href="https://winexch.com/?btag=52330173" target="_blank"><img src="https://hubcloud.club/drive/assets/header.gif" style="-->
+            <!--    width: 820px;-->
+            <!--    height: 90px;-->
+            <!--    padding: -17px;-->
+            <!--" class="img-fluid"></a>-->
+          </center>
+
+          <div class="loading">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              style="margin:auto;background:#fff;display:block;" width="200px" height="200px" viewBox="0 0 100 100"
+              preserveAspectRatio="xMidYMid">
+              <g>
+                <circle cx="73.801" cy="68.263" fill="#e15b64" r="3">
+                  <animatetransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50"
+                    times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.4925373134328357s" begin="0s">
+                  </animatetransform>
+                </circle>
+                <circle cx="68.263" cy="73.801" fill="#f47e60" r="3">
+                  <animatetransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50"
+                    times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.4925373134328357s"
+                    begin="-0.062s"></animatetransform>
+                </circle>
+                <circle cx="61.481" cy="77.716" fill="#f8b26a" r="3">
+                  <animatetransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50"
+                    times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.4925373134328357s"
+                    begin="-0.125s"></animatetransform>
+                </circle>
+                <circle cx="53.916" cy="79.743" fill="#abbd81" r="3">
+                  <animatetransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50"
+                    times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.4925373134328357s"
+                    begin="-0.187s"></animatetransform>
+                </circle>
+                <circle cx="46.084" cy="79.743" fill="#849b87" r="3">
+                  <animatetransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50"
+                    times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.4925373134328357s"
+                    begin="-0.25s"></animatetransform>
+                </circle>
+                <circle cx="38.519" cy="77.716" fill="#6492ac" r="3">
+                  <animatetransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50"
+                    times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.4925373134328357s"
+                    begin="-0.312s"></animatetransform>
+                </circle>
+                <circle cx="31.737" cy="73.801" fill="#637cb5" r="3">
+                  <animatetransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50"
+                    times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.4925373134328357s"
+                    begin="-0.375s"></animatetransform>
+                </circle>
+                <circle cx="26.199" cy="68.263" fill="#6a63b6" r="3">
+                  <animatetransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50"
+                    times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.4925373134328357s"
+                    begin="-0.437s"></animatetransform>
+                </circle>
+                <animatetransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;0 50 50"
+                  times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.4925373134328357s">
+                </animatetransform>
+              </g>
+            </svg>
+            <h3>Please Wait While Page is loading</h3>
+          </div>
+          <div class="vd d-none">
+
+            <a id="download" rel="noopener noreferrer nofollow" class="btn btn-primary h6 p-2"><i
+                class="fas fa-file-download fa-lg"></i> Generate Direct
+              Download Link</a>
+
+            <center>
+              <!--<div class="ads-btns">-->
+              <!--<div class="downloads-btns-div"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 15 15"><path d="M7.5,1.5a6,6,0,1,0,0,12a6,6,0,1,0,0,-12m0,1a5,5,0,1,1,0,10a5,5,0,1,1,0,-10ZM6.625,11l1.75,0l0,-4.5l-1.75,0ZM7.5,3.75a1,1,0,1,0,0,2a1,1,0,1,0,0,-2Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 15 15"><path d="M3.25,3.25l8.5,8.5M11.75,3.25l-8.5,8.5"></path></svg><a class="btn2" href="https://winexch.com/?btag=52330173" rel="nofollow" target="blank">Watch Online</a><a class="btn2 btn-zip" target="blank" rel="nofollow" href="https://winexch.com/?btag=52330173">Download</a></div>-->
+              <!--</div>-->
+            </center>
+
+          </div>
+        </h2>
+        <center>
+          <!--   <a href="http://winexch.com/?btag=52330173" target="_blank"><img src="https://hubcloud.club/drive/assets/footer.gif" style="-->
+          <!--    width: 820px;-->
+          <!--    height: 90px;-->
+          <!--    padding: -17px;-->
+          <!--" class="img-fluid"></a>-->
+        </center>
+
+        <div class="alert alert-info" role="alert">
+          <p><a href="https://tinyurl.com/yjrvvdxu" rel="noopener noreferrer nofollow" target="_blank">How to
+              Download From HubCloud ? Click here to Watch Tutorial</a></p>
+        </div>
+
+        <div class="alert alert-primary" role="alert">
+          <p><b>Note:</b> <i> Always Use Updated Chrome Browser With Cookies
+              Enabled .</i>| Refresh this Page &amp; click Download again if
+            you get any error. ! Resume is Supported-Enjoy :)</p>
+        </div>
+        <div class="alert alert-info" role="alert">
+          <p>If you're getting any error please report at <a href="https://t.me/sumitbotreport">@Telegram Group</a> with
+            Share Link And Screenshot (:</p>
+        </div>
+        <hr>
+
+        <!--<div class="m-5 font-weight-normal text-primary">-->
+        <!--<a href="https://a-ads.com?partner=1490501">Advertise with Anonymous Ads</a>-->
+        <!--</div>-->
+        <br>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade show active" id="link">
+            <div class="text" align="center">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="button1" role="tab" data-toggle="tab">Copy Link</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-body" id="div1">
+                <p onclick="copy_link('div1')">https://hubcloud.ink/drive/fgw8949dwi9jgc2</p>
+              </div>
+              <button class="btn btn-success btn-sm" id="button1" onclick="copy_link('div1')"><i class="fa fa-copy"></i>
+                Copy
+                Link</button>
+              <script>
+                setTimeout(function () {
+                  document.querySelector(".loading").classList.add("d-none");
+                  document.querySelector(".vd").classList.remove("d-none");
+                }, 2000);
+                var url = 'https://shetkaritoday.in/hubcloud.php?host=hubcloud&id=fgw8949dwi9jgc2&token=ci9HSTVPWnQwazdxWVJPZ3paV0JOY0NtSE1yRDlJaEFvcjZTMW5ORzI2TT0=';
+                var download = document.getElementById('download');
+                download.onclick = function () {
+                  download.disabled = true;
+                  window.location = url
+                  setTimeout(function () {
+                    download.disabled = false;
+                  }, 10000);
+
+                }
+              </script>
+              <script>
+                function copy_link(e) { let el = e; e = document.getElementById(el).value; if (typeof e == 'undefined') { e = document.getElementById(el).innerText } a = document.createElement("textarea"); a.innerHTML = e, document.body.appendChild(a), a.select(); document.execCommand("copy"); document.body.removeChild(a), swal("Link Copied! : " + e) }
+              </script>
+
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br><br>
+      </div>
+
+      <div class="footer">
+
+        <p>Made with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+            </path>
+          </svg> By - S-B0t</p>
+      </div>
+
+    </div>
+  </center>
+  <div
+    style="height: 30.3333px; width: 589.062px; z-index: 2147483647; cursor: pointer; top: 1150.77px; left: 105.469px; position: fixed;">
+  </div>
+</body>
+
+</html>
