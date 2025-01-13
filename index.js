@@ -1,12 +1,15 @@
 const express = require("express");
 const cheerio = require("cheerio");
-
+const cors = require("cors"); // Import the CORS middleware
 require("dotenv").config();
 const { chromium } = require("playwright");
 
 // Initialize Express app
 const app = express();
 const port = 3000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Function to fetch MKV link
 const fetchMkvLink = async (finalLink) => {
@@ -87,7 +90,9 @@ app.get("/test", async (req, res) => {
     res.status(500).send("Error processing the request.");
   }
 });
-
+app.get("/", (req, res) => {
+  res.send("server is live");
+});
 // Start the Express server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
