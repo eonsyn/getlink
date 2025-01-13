@@ -1,24 +1,42 @@
-const express = require("express");
-const axios = require("axios");
-// const { scrapdata } = require("./scrappingLogic.js");
-const Port = 2300;
-const app = express();
-// app.get("/", (req, res) => {
-//   scrapdata(res);
-// });
-app.get("/home", (req, res) => {
-  axios
-    .get(
-      "https://scrape.abstractapi.com/v1/?api_key=df74a5f42c584c7eb5d3b193d05ad1d1&url=https://hubcloud.ink/drive/juj0bb807xgashi"
-    )
-    .then((response) => {
-      console.log(response.data);
-      res.send(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+const app = require("express")();
+
+let chrome = {};
+let puppeteer;
+
+if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
+  chrome = require("chrome-aws-lambda");
+  puppeteer = require("puppeteer-core");
+} else {
+  puppeteer = require("puppeteer");
+}
+
+app.get("/api", async (req, res) => {
+  let options = {};
+
+  if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
+    options = {
+      args: [...chrome.args, "--hide-scrollbars", "--disable-web-security"],
+      defaultViewport: chrome.defaultViewport,
+      executablePath: await chrome.executablePath,
+      headless: true,
+      ignoreHTTPSErrors: true,
+    };
+  }
+
+  try {
+    let browser = await puppeteer.launch(options);
+
+    let page = await browser.newPage();
+    await page.goto("https://www.google.com");
+    res.send(await page.title());
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
 });
-app.listen(Port, () => {
-  console.log("server is running at 2300");
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server started 3000");
 });
+
+module.exports = app;
